@@ -183,8 +183,46 @@ h3 {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
-  align-items: end;
+  align-items: start;
   padding-top: 6.4rem;
+}
+
+.hero-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.portrait-card {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.portrait-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+.portrait-card figcaption {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.portrait-card figcaption strong {
+  font-family: "Fraunces", serif;
+  font-size: 1.1rem;
+}
+
+.portrait-card figcaption span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .hero-actions {
@@ -474,12 +512,48 @@ summary:focus-visible {
   border-radius: var(--radius-l);
   background: linear-gradient(160deg, #fffefb 0%, #f6eee4 100%);
   box-shadow: var(--shadow);
-  padding: 1.8rem;
-  max-width: 880px;
+  padding: 1.3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .founder-card p {
   margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.founder-photo {
+  width: 100%;
+  max-width: 340px;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--line);
+  justify-self: end;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+.manifesto {
+  padding-top: 4.6rem;
+}
+
+.manifesto-grid {
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.manifesto-grid article {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.2rem;
+}
+
+.manifesto-grid p {
+  margin: 0.7rem 0 0;
   color: var(--muted);
 }
 
@@ -630,7 +704,8 @@ footer {
 
   .hero,
   .problem-opportunity,
-  .technical-edge {
+  .technical-edge,
+  .founder-card {
     grid-template-columns: 1fr;
   }
 
@@ -639,6 +714,10 @@ footer {
   }
 
   .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-grid {
     grid-template-columns: 1fr;
   }
 
@@ -683,6 +762,11 @@ footer {
 
   .hero {
     padding-top: 4.8rem;
+  }
+
+  .founder-photo {
+    max-width: 280px;
+    justify-self: start;
   }
 
   .insights-grid {
